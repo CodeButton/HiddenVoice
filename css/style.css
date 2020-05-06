@@ -1,0 +1,41 @@
+<!-- Demo styles -- > body {
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0%;
+}
+.swiper-container {
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 410px;
+    height: 500px;
+}
+.header {
+    text-align: center;
+}
+.subheader {
+    text-align: center;
+}
+.acter-image {
+    width: 400px;
+    height: 215px;
+}
+.btn-recording {
+    display: none;
+}
+.btn-result {
+    display: none;
+}
+.voice-result {
+    padding-top: 10%;
+}
+h1 {
+    font-family: fantasy;
+}
