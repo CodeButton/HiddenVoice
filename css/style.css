@@ -14,7 +14,7 @@
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 410px;
+    width: 370px;
     height: 600px;
 }
 .header {
@@ -24,8 +24,8 @@
     text-align: center;
 }
 .acter-image {
-    width: 400px;
-    height: 215px;
+    width: 370px;
+    height: 190px;
 }
 .btn-recording {
     display: none;
