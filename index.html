@@ -501,10 +501,17 @@
         for (let i = 1; i < classLabels.length; i++) {
             labelContainer.childNodes[i].innerHTML = classLabels[i] + ":  " + Math.floor(scores[i].toFixed(2) * 100) + "%";
             var progress = document.createElement("div");
-            progress.setAttribute("class", "bar");
+            progress.setAttribute("id", "progress" + i);
+            progress.setAttribute("class", "progress");
             labelContainer.childNodes[i].appendChild(progress);
             var percentage = document.createElement("div");
-            percentage.setAttribute("style", "height:24px;width:" + Math.floor(scores[i].toFixed(2) * 100) + "%");
+             percentage.setAttribute("id", "progress-bar" + i);
+            percentage.setAttribute("class", "progress-bar");
+            percentage.setAttribute("role", "progressbar");
+            percentage.setAttribute("aria-valuemin", "0");
+            percentage.setAttribute("aria-valuemin", "100");
+            percentage.setAttribute("aria-valuenow", Math.floor(scores[i].toFixed(2) * 100));            
+            percentage.setAttribute("style", "width:" + Math.floor(scores[i].toFixed(2) * 100) + "%");
             const classPrediction = Math.floor(scores[i].toFixed(2) * 100) + "%";
             percentage.innerHTML = classPrediction;
             progress.appendChild(percentage);
