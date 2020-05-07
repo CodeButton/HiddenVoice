@@ -501,6 +501,7 @@
         // render the probability scores per class
         for (let i = 1; i < classLabels.length; i++) {
             alert("타이틀 시작.");
+            alert("결과 값:" + classLabels[i] + ":" + Math.floor(scores[i].toFixed(2) * 100) + "%");
             labelContainer.childNodes[i].innerHTML = classLabels[i] + ":  " + Math.floor(scores[i].toFixed(2) * 100) + "%";
             var progress = document.createElement("div");
             alert("프로그래스 만들기 시작.");
