@@ -91,8 +91,8 @@
                 <div class="acter-image" style="background-image:url(images/step-3.jpg)"></div>
                 <div>
                     <p id="description3">
-                        대사:<br> 
-                        추억은 가슴에 묻고, 지나간 버스는 미련을 버려
+                        대사:
+                        <br> 추억은 가슴에 묻고, 지나간 버스는 미련을 버려
 
                     </p>
                 </div>
@@ -153,8 +153,8 @@
                 <div class="acter-image" style="background-image:url(images/step-5.jpg)"></div>
                 <div>
                     <p id="description5">
-                        대사:<br> 
-                        내가, 내가 십년동안 울면서 후회하고 다짐했는데
+                        대사:
+                        <br> 내가, 내가 십년동안 울면서 후회하고 다짐했는데
                         <br>꼭 그랬어야 되냐? 너네 그러면 안됐어
                         <br>꼭 그렇게 다 가져가야만 속이 후련했냐!! ****들아
 
@@ -185,9 +185,9 @@
                 <div>
                     <p id="description6">
                         대사: 나는 경찰이다.
-                        <br> 대한민국 경찰은 모든 국민의 평안하고 
-                        <br> 행복한 삶에 대한 x나게 영예로운 책임을 지고 있다. 
-                        <br> 지금도 전국 곳곳에 깔린 15만명의 경찰은 
+                        <br> 대한민국 경찰은 모든 국민의 평안하고
+                        <br> 행복한 삶에 대한 x나게 영예로운 책임을 지고 있다.
+                        <br> 지금도 전국 곳곳에 깔린 15만명의 경찰은
                         <br> 두당 삼백여 시민들의 안전을 위해
                         <br> 묵묵히 일하고 있다.
 
@@ -342,7 +342,7 @@
             <!--<div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>                 <div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>              -->
         </div>
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>        
+        <div class="swiper-pagination"></div>
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="share-buttons">
             <div class="addthis_inline_share_toolbox_7wtv"></div>
@@ -501,17 +501,10 @@
         for (let i = 1; i < classLabels.length; i++) {
             labelContainer.childNodes[i].innerHTML = classLabels[i] + ":  " + Math.floor(scores[i].toFixed(2) * 100) + "%";
             var progress = document.createElement("div");
-            progress.setAttribute("id", "progress" + i);
-            progress.setAttribute("class", "progress");
+            progress.setAttribute("class", "bar");
             labelContainer.childNodes[i].appendChild(progress);
             var percentage = document.createElement("div");
-            percentage.setAttribute("id", "progress-bar" + i);
-            percentage.setAttribute("class", "progress-bar");
-            percentage.setAttribute("role", "progressbar");
-            percentage.setAttribute("aria-valuemin", "0");
-            percentage.setAttribute("aria-valuemin", "100");
-            percentage.setAttribute("aria-valuenow", Math.floor(scores[i].toFixed(2) * 100));
-            percentage.setAttribute("style", "width:" + Math.floor(scores[i].toFixed(2) * 100) + "%");
+            percentage.setAttribute("style", "height:24px;width:" + Math.floor(scores[i].toFixed(2) * 100) + "%");
             const classPrediction = Math.floor(scores[i].toFixed(2) * 100) + "%";
             percentage.innerHTML = classPrediction;
             progress.appendChild(percentage);
