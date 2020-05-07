@@ -495,15 +495,19 @@
     }
 
     function showResult() {
+        alert("결과보기 시작.");
         btnResult.style.display = "none";
         recording.style.display = "none";
         // render the probability scores per class
         for (let i = 1; i < classLabels.length; i++) {
+            alert("타이틀 시작.");
             labelContainer.childNodes[i].innerHTML = classLabels[i] + ":  " + Math.floor(scores[i].toFixed(2) * 100) + "%";
             var progress = document.createElement("div");
+            alert("프로그래스 만들기 시작.");
             progress.setAttribute("id", "progress" + i);
             progress.setAttribute("class", "progress");
             labelContainer.childNodes[i].appendChild(progress);
+            alert("퍼센트율 만들기 시작.");
             var percentage = document.createElement("div");
              percentage.setAttribute("id", "progress-bar" + i);
             percentage.setAttribute("class", "progress-bar");
