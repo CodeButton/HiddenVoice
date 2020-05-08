@@ -475,9 +475,9 @@
         classLabels = recognizer.wordLabels(); // get class labels
         labelContainer = document.getElementById("label-container" + labelContainerNum);
         for (let i = 0; i < classLabels.length; i++) {
-            var result = document.createElement("div");
-            result.setAttribute("id", "result-graph" + i + labelContainerNum);
-            labelContainer.appendChild(result);
+            var resultDiv = document.createElement("div");
+            resultDiv.setAttribute("id", "result-graph" + i + labelContainerNum);
+            labelContainer.appendChild(resultDiv);
         }
         // listen() takes two arguments:
         // 1. A callback function that is invoked anytime a word is recognized.
