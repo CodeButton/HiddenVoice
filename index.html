@@ -347,6 +347,11 @@
         <div class="share-buttons">
             <div class="addthis_inline_share_toolbox_7wtv"></div>
         </div>
+        <div class="ad">
+            <a href="https://coupa.ng/bBZiY2" target="_blank">
+                <img src="https://ads-partners.coupang.com/banners/234037?subId=&traceId=V0-301-50c6c2b97fba9aee-I234037&w=320&h=50" alt="">
+            </a>
+        </div>
     </div>
 
     <!-- Modal -->
@@ -505,12 +510,12 @@
             progress.setAttribute("class", "progress");
             labelContainer.childNodes[i].appendChild(progress);
             var percentage = document.createElement("div");
-             percentage.setAttribute("id", "progress-bar" + i);
+            percentage.setAttribute("id", "progress-bar" + i);
             percentage.setAttribute("class", "progress-bar");
             percentage.setAttribute("role", "progressbar");
             percentage.setAttribute("aria-valuemin", "0");
             percentage.setAttribute("aria-valuemin", "100");
-            percentage.setAttribute("aria-valuenow", Math.floor(scores[i].toFixed(2) * 100));            
+            percentage.setAttribute("aria-valuenow", Math.floor(scores[i].toFixed(2) * 100));
             percentage.setAttribute("style", "width:" + Math.floor(scores[i].toFixed(2) * 100) + "%");
             const classPrediction = Math.floor(scores[i].toFixed(2) * 100) + "%";
             percentage.innerHTML = classPrediction;
