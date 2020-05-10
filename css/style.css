@@ -17,6 +17,9 @@
     width: 370px;
     height: 600px;
 }
+.swiper-pagination {
+    padding-top: 10%;
+}
 .header {
     text-align: center;
 }
