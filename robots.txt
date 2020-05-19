@@ -4,4 +4,4 @@ Allow: /
 User-agent: anothercrawler
 Disallow: /
 
-Sitemap: https://masrerhiddenvoice.ga/sitemap.xml
+Sitemap: https://masterhiddenvoice.ga/sitemap.xml
