@@ -641,8 +641,15 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
     var btnResult;
     var recordingTime;
     var recordingTimer;
+    var startButton;
+    var recognizer;
     async function init() {
-        const recognizer = await createModel();
+        if(confirm("잠시만 기다려 주세요. 곧 녹음이 시작됩니다.")){
+        recognizer = await createModel();            
+        }else {
+            alert("녹음이 취소되었습니다.");
+            return false;
+        }
         recording = document.getElementById("recording");
         btnRecoding = document.getElementById("btn-recording");
         finishingrecord = document.getElementById("btn-recording-finished");
