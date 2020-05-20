@@ -1,2 +1,7 @@
 User-agent: *
 Allow: /
+
+User-agent: anothercrawler
+Disallow: /
+
+Sitemap: https://masterhiddenvoice.ga/sitemap.xml
