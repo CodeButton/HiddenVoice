@@ -19,6 +19,7 @@
 }
 .swiper-pagination {
     padding-top: 10%;
+    position : static;
 }
 .header {
     text-align: center;
