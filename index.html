@@ -455,8 +455,9 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             </div>
             <!--<div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>                 <div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>              -->
         </div>
-        <!-- Add Pagination -->
+                            <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
+        <div class= "floor-banner">
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="share-buttons">
             <div class="addthis_inline_share_toolbox_7wtv"></div>
@@ -471,12 +472,13 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
                 });
             </script>
         </div>
-        <div>
+        <div class="kakao-ad">
             <!-- kakao ad-->
             <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1ji26txv1r9dd" data-ad-width="320" data-ad-height="100"></ins>
             <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
-    </div>
+                </div>
+</div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -568,7 +570,7 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
         },
         pagination: {
             el: '.swiper-pagination',
-            type : 'fraction',
+            type: 'fraction',
             formatFractionCurrent: function(number) {
                 currentNum = number;
                 if (currentNum !== pastNum) {

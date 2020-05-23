@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0%;
 }
-.swiper-container {
+.swiper-container .floor-banner .modal-dialog{
     width: 100%;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -47,4 +47,8 @@ h1 {
 }
 .ad {
     text-align: center;
+}
+.kakao-ad{
+    width:400px;
+    margin: 0 auto;
 }
