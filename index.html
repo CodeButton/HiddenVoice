@@ -457,25 +457,25 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <div class="share-buttons">
-        <div class="addthis_inline_share_toolbox_7wtv"></div>
-    </div>
-    <!--ad-->
-    <div class="ad">
-        <!-- Coupang ad-->
-        <script src="https://ads-partners.coupang.com/g.js"></script>
-        <script>
-            new PartnersCoupang.G({
-                id: 234150
-            });
-        </script>
-    </div>
-    <div>
-        <!-- kakao ad-->
-        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1ji26txv1r9dd" data-ad-width="320" data-ad-height="100"></ins>
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    </div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="share-buttons">
+            <div class="addthis_inline_share_toolbox_7wtv"></div>
+        </div>
+        <!--ad-->
+        <div class="ad">
+            <!-- Coupang ad-->
+            <script src="https://ads-partners.coupang.com/g.js"></script>
+            <script>
+                new PartnersCoupang.G({
+                    id: 234150
+                });
+            </script>
+        </div>
+        <div>
+            <!-- kakao ad-->
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1ji26txv1r9dd" data-ad-width="320" data-ad-height="100"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -565,24 +565,26 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             depth: 100,
             modifier: 1,
             slideShadows: true,
-        },     
+        },
         pagination: {
             el: '.swiper-pagination',
-        formatFractionCurrent:function(number){
-            currentNum = number;
-            if(currentNum !== pastNum){
-                movingSlideOn = true;
-                selectBoxOn = false;
-                pastNum = currentNum;
-            }       
-            return currentNum;
-        },
+            type : 'fraction',
+            formatFractionCurrent: function(number) {
+                currentNum = number;
+                if (currentNum !== pastNum) {
+                    movingSlideOn = true;
+                    selectBoxOn = false;
+                    pastNum = currentNum;
+                }
+                return currentNum;
+            },
         },
     });
     //select description
     var descriptionNum = null;
     var audioNum = null;
     var selectedValue = null;
+
     function description_selected(num) {
         selectBoxOn = true;
         var selectDescription = document.getElementById('description-select' + num);
@@ -756,7 +758,7 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
     }
 
     function description(num) {
-        if(movingSlideOn){
+        if (movingSlideOn) {
             descriptionNum = null;
         }
         if (selectBoxOn) {
