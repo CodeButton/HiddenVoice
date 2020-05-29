@@ -455,30 +455,30 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             </div>
             <!--<div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>                 <div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>              -->
         </div>
-                            <!-- Add Pagination -->
+        <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
-        <div class= "floor-banner">
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <div class="share-buttons">
-            <div class="addthis_inline_share_toolbox_7wtv"></div>
+        <div class="floor-banner">
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="share-buttons">
+                <div class="addthis_inline_share_toolbox_7wtv"></div>
+            </div>
+            <!--ad-->
+            <div class="ad">
+                <!-- Coupang ad-->
+                <script src="https://ads-partners.coupang.com/g.js"></script>
+                <script>
+                    new PartnersCoupang.G({
+                        id: 234150
+                    });
+                </script>
+            </div>
+            <div class="kakao-ad">
+                <!-- kakao ad-->
+                <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1ji26txv1r9dd" data-ad-width="320" data-ad-height="100"></ins>
+                <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+            </div>
         </div>
-        <!--ad-->
-        <div class="ad">
-            <!-- Coupang ad-->
-            <script src="https://ads-partners.coupang.com/g.js"></script>
-            <script>
-                new PartnersCoupang.G({
-                    id: 234150
-                });
-            </script>
-        </div>
-        <div class="kakao-ad">
-            <!-- kakao ad-->
-            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1ji26txv1r9dd" data-ad-width="320" data-ad-height="100"></ins>
-            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
-                </div>
-</div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -664,42 +664,43 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
     var startButton;
     var recognizer;
     async function init() {
-        if (confirm("잠시만 기다려 주세요. 곧 녹음이 시작됩니다.")) {
-            recognizer = await createModel();
+        alert("녹음 준비중입니다. 잠시만 기다려 주세요.");
+        recognizer = await createModel();
+        if (confirm("녹음을 시작하시겠습니까?")) {
+            recording = document.getElementById("recording");
+            btnRecoding = document.getElementById("btn-recording");
+            finishingrecord = document.getElementById("btn-recording-finished");
+            btnResult = document.getElementById("result");
+            recordingTimer = document.getElementById("recording-time-select");
+            recordingTime = parseInt(recordingTimer.options[recordingTimer.selectedIndex].value);
+            btnRecoding.style.display = "block";
+            finishingrecord.style.display = "none";
+            recording.style.display = "block";
+            startCount();
+            classLabels = recognizer.wordLabels(); // get class labels
+            labelContainer = document.getElementById("label-container" + labelContainerNum);
+            for (let i = 0; i < classLabels.length; i++) {
+                var resultDiv = document.createElement("div");
+                resultDiv.setAttribute("id", "result-graph" + i + labelContainerNum);
+                labelContainer.appendChild(resultDiv);
+            }
+            // listen() takes two arguments:
+            // 1. A callback function that is invoked anytime a word is recognized.
+            // 2. A configuration object with adjustable fields
+            recognizer.listen(result => {
+                scores = result.scores; // probability of prediction for each class
+            }, {
+                includeSpectrogram: true, // in case listen should return result.spectrogram
+                probabilityThreshold: 0.75,
+                invokeCallbackOnNoiseAndUnknown: true,
+                overlapFactor: 0.50 // probably want between 0.5 and 0.75. More info in README
+            });
+            // Stop the recognition in recordingTime seconds.
+            setTimeout(() => recognizer.stopListening(), recordingTime * 1000);
         } else {
             alert("녹음이 취소되었습니다.");
             return false;
         }
-        recording = document.getElementById("recording");
-        btnRecoding = document.getElementById("btn-recording");
-        finishingrecord = document.getElementById("btn-recording-finished");
-        btnResult = document.getElementById("result");
-        recordingTimer = document.getElementById("recording-time-select");
-        recordingTime = parseInt(recordingTimer.options[recordingTimer.selectedIndex].value);
-        btnRecoding.style.display = "block";
-        finishingrecord.style.display = "none";
-        recording.style.display = "block";
-        startCount();
-        classLabels = recognizer.wordLabels(); // get class labels
-        labelContainer = document.getElementById("label-container" + labelContainerNum);
-        for (let i = 0; i < classLabels.length; i++) {
-            var resultDiv = document.createElement("div");
-            resultDiv.setAttribute("id", "result-graph" + i + labelContainerNum);
-            labelContainer.appendChild(resultDiv);
-        }
-        // listen() takes two arguments:
-        // 1. A callback function that is invoked anytime a word is recognized.
-        // 2. A configuration object with adjustable fields
-        recognizer.listen(result => {
-            scores = result.scores; // probability of prediction for each class
-        }, {
-            includeSpectrogram: true, // in case listen should return result.spectrogram
-            probabilityThreshold: 0.75,
-            invokeCallbackOnNoiseAndUnknown: true,
-            overlapFactor: 0.50 // probably want between 0.5 and 0.75. More info in README
-        });
-        // Stop the recognition in recordingTime seconds.
-        setTimeout(() => recognizer.stopListening(), recordingTime * 1000);
     }
 
     function showResult() {
