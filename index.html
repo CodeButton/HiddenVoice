@@ -664,7 +664,7 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
     var startButton;
     var recognizer;
     async function init() {
-        alert("녹음 준비중입니다. 잠시만 기다려 주세요.");
+        alert("녹음 준비중입니다. 잠시만 기다려 주세요.(최대 30초)");
         recognizer = await createModel();
         if (confirm("녹음을 시작하시겠습니까?")) {
             recording = document.getElementById("recording");
