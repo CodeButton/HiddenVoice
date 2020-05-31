@@ -21,6 +21,7 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
     <!--icon-->
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
     <link rel="icon" href="images/icon.ico" type="image/x-icon">
+    <!--toggle-->
     <script data-ad-client="ca-pub-7335963028587107" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8S2XMXE2XE"></script>
@@ -46,414 +47,588 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
                 <strong>*성대모사 달인되기*</strong>
             </h5>
         </div>
+        <!-- Material checked -->
+        <div class="switchOnoff">
+            <span id>여성</span>
+            <label class="switch">
+                <input type="checkbox" checked id="switchbtn" onchange="togglestate()">
+                <span class="slider round"></span>
+            </label>
+            <span>남성</span>
+        </div>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-1.jpg)"></div>
-                <label style="color:red;">대사 길이 선택:
-                    <select name="description-select1" id="description-select1" style="width: 100px;" onchange='description_selected(1)'>
-                        <option value="short" selected>짧은 대사</option>
-                        <option value="entire">전체 대사</option>
-                    </select>
-                </label>
-                <div>
-                    <p id="body-description1" style="display:block;">
-                        대사: (느그서장)남천동살제? 어! 내가 임마!
-                        <br> &nbsp;&nbsp;&nbsp;느그서장이랑 임마! 어저께도 어! 같이 밥 묵고 어!
-                    </p>
-                    <p id="body-description1-3" style="display:none;">
-                        대사: (느그서장)남천동살제? 어! 내가 임마!
-                        <br> &nbsp;&nbsp;&nbsp;느그서장이랑 임마! 어저께도 어! 같이 밥 묵고 어!
-                        <br> &nbsp;&nbsp;&nbsp;사우나도 같이가고 어! 개*꺄 다 했어!
-                        <br> &nbsp;&nbsp;&nbsp;새*들이 말이야
-                    </p>
+                <!--start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-1.jpg)"></div>
+                    <label style="color:red;">대사 길이 선택:
+                        <select name="male-description-select1" id="male-description-select1" style="width: 100px;" onchange='description_selected(1)'>
+                            <option value="short" selected>짧은 대사</option>
+                            <option value="entire">전체 대사</option>
+                        </select>
+                    </label>
+                    <div>
+                        <p id="male-body-description1" style="display:block;">
+                            대사: (느그서장)남천동살제? 어! 내가 임마!
+                            <br> &nbsp;&nbsp;&nbsp;느그서장이랑 임마! 어저께도 어! 같이 밥 묵고 어!
+                        </p>
+                        <p id="male-body-description1-3" style="display:none;">
+                            대사: (느그서장)남천동살제? 어! 내가 임마!
+                            <br> &nbsp;&nbsp;&nbsp;느그서장이랑 임마! 어저께도 어! 같이 밥 묵고 어!
+                            <br> &nbsp;&nbsp;&nbsp;사우나도 같이가고 어! 개*꺄 다 했어!
+                            <br> &nbsp;&nbsp;&nbsp;새*들이 말이야
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('1')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('1')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('1')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container1"></div>
+                    <!-- end male -->
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('1')">
-                            대사듣기
-                        </button>
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    <div class="acter-image" style="background-image:url(images/female/step-1.jpg)"></div>
+                    <div>
+                        <p id="female-body-description1" style="display:block;">
+                            대사: 모든게 완벽했다.
+                            <br> 나를 둘러싼 모두가 완벽하게, 나를 속이고 있었다.
+                        </p>
                     </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('1')">
-                            대사따라하기
-                        </button>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('1')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('1')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('1')">
+                                결과지우기
+                            </button>
+                        </div>
                     </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('1')">
-                            결과지우기
-                        </button>
-                    </div>
+                    <div class="voice-result" id="female-label-container1"></div>
                 </div>
-                <div class="voice-result" id="label-container1"></div>
             </div>
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-2.jpg)"></div>
-                <div>
-                    <p id="body-description2">
-                        대사: 재밌네, 재밌어
-                        <br>이런 저런 계산 고민없이 일 하나만 보고 달려들잖아
-                        <br>겁도없이
-                    </p>
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-2.jpg)"></div>
+                    <div>
+                        <p id="male-body-description2">
+                            대사: 재밌네, 재밌어
+                            <br>이런 저런 계산 고민없이 일 하나만 보고 달려들잖아
+                            <br>겁도없이
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('2')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('2')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('2')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container2"></div>
+                    <!-- end male -->
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('2')">
-                            대사듣기
-                        </button>
+                <!-- start female-->
+                <div class="female" style="display:none;">
+                    <div class="acter-image" style="background-image:url(images/female/step-2.jpg)"></div>
+                    <div>
+                        <p id="female-body-description2" style="display:block;">
+                            대사: 열정을 쏟을만한 일을 만들라고 하셔서,
+                            <br> 그래서 시작한게 그림이쟈놔여어~
+                            <br> 그러니깐, 선생님이 꼭 오셔야돼여~
+                        </p>
                     </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('2')">
-                            대사따라하기
-                        </button>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('2')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('2')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('2')">
+                                결과지우기
+                            </button>
+                        </div>
                     </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('2')">
-                            결과지우기
-                        </button>
-                    </div>
+                    <div class="voice-result" id="female-label-container2"></div>
                 </div>
-                <div class="voice-result" id="label-container2"></div>
+                <!-- end female-->
             </div>
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-3.jpg)"></div>
-                <div>
-                    <p id="body-description3">
-                        대사:
-                        <br> 추억은 가슴에 묻고, 지나간 버스는 미련을 버려
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-3.jpg)"></div>
+                    <div>
+                        <p id="male-body-description3">
+                            대사:
+                            <br> 추억은 가슴에 묻고, 지나간 버스는 미련을 버려
 
-                    </p>
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('3')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('3')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('3')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container3"></div>
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('3')">
-                            대사듣기
-                        </button>
+                <!--end male -->
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    <div class="acter-image" style="background-image:url(images/female/step-3.jpg)"></div>
+                    <div>
+                        <p id="female-body-description3" style="display:block;">
+                            대사: 남의 집에 갑자기 쳐들어와서 이게 무슨 짓이예요?
+                        </p>
                     </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('3')">
-                            대사따라하기
-                        </button>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('3')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('3')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('3')">
+                                결과지우기
+                            </button>
+                        </div>
                     </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('3')">
-                            결과지우기
-                        </button>
-                    </div>
+                    <div class="voice-result" id="female-label-container3"></div>
                 </div>
-                <div class="voice-result" id="label-container3"></div>
+                <!-- end female-->
             </div>
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-4.jpg)"></div>
-                <label style="color:red;">대사 길이 선택:
-                    <select name="description-select4" id="description-select4" style="width: 100px;" onchange='description_selected(4)'>
-                        <option value="short" selected>짧은 대사</option>
-                        <option value="middle">중간 대사</option>
-                        <option value="entire">전체 대사</option>
-                    </select>
-                </label>
-                <div>
-                    <p id="body-description4" style="display:block;">
-                        대사: 내가 동지 셋을 팔았다고 하셨는데!!
-                        <br>그 친구들 제가 직접 뽑았습니다!
-                    </p>
-                    <p id="body-description4-5" style="display:none;">
-                        대사: 내가 동지 셋을 팔았다고 하셨는데!!
-                        <br>그 친구들 제가 직접 뽑았습니다!
-                        <br>그 젊은 청춘들이 어떤 심정이었는지 아십니까?
-                        <br>여러분들은 모릅니다!
-                    </p>
-                    <p id="body-description4-6" style="display:none;">
-                        대사: 내가 동지 셋을 팔았다고 하셨는데!!
-                        <br>그 친구들 제가 직접 뽑았습니다!
-                        <br>그 젊은 청춘들이 어떤 심정이었는지 아십니까?
-                        <br>여러분들은 모릅니다!
-                        <br>내가 어떤 심정으로 그들을 보냈는지, 그건!
-                        <br>죽음을 불사하는 항전의 걸음이었습니다! 재판장님!
-                    </p>
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-4.jpg)"></div>
+                    <label style="color:red;">대사 길이 선택:
+                        <select name="male-description-select4" id="male-description-select4" style="width: 100px;" onchange='description_selected(4)'>
+                            <option value="short" selected>짧은 대사</option>
+                            <option value="middle">중간 대사</option>
+                            <option value="entire">전체 대사</option>
+                        </select>
+                    </label>
+                    <div>
+                        <p id="male-body-description4" style="display:block;">
+                            대사: 내가 동지 셋을 팔았다고 하셨는데!!
+                            <br>그 친구들 제가 직접 뽑았습니다!
+                        </p>
+                        <p id="male-body-description4-5" style="display:none;">
+                            대사: 내가 동지 셋을 팔았다고 하셨는데!!
+                            <br>그 친구들 제가 직접 뽑았습니다!
+                            <br>그 젊은 청춘들이 어떤 심정이었는지 아십니까?
+                            <br>여러분들은 모릅니다!
+                        </p>
+                        <p id="male-body-description4-6" style="display:none;">
+                            대사: 내가 동지 셋을 팔았다고 하셨는데!!
+                            <br>그 친구들 제가 직접 뽑았습니다!
+                            <br>그 젊은 청춘들이 어떤 심정이었는지 아십니까?
+                            <br>여러분들은 모릅니다!
+                            <br>내가 어떤 심정으로 그들을 보냈는지, 그건!
+                            <br>죽음을 불사하는 항전의 걸음이었습니다! 재판장님!
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('4')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('4')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('4')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container4"></div>
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('4')">
-                            대사듣기
-                        </button>
-                    </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('4')">
-                            대사따라하기
-                        </button>
-                    </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('4')">
-                            결과지우기
-                        </button>
-                    </div>
+                <!-- end male -->
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    Coming soon...
                 </div>
-                <div class="voice-result" id="label-container4"></div>
+                <!-- end female -->
             </div>
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-5.jpg)"></div>
-                <label style="color:red;">대사 길이 선택:
-                    <select name="description-select5" id="description-select5" style="width: 100px;" onchange='description_selected(5)'>
-                        <option value="short" selected>짧은 대사</option>
-                        <option value="entire">전체 대사</option>
-                    </select>
-                </label>
-                <div>
-                    <p id="body-description5" style="display:block;">
-                        대사:
-                        <br> 내가, 내가 십년동안 울면서 후회하고 다짐했는데
-                        <br>꼭 그랬어야 되냐? 너네 그러면 안됐어
-                    </p>
-                    <p id="body-description5-7" style="display:none;">
-                        대사:
-                        <br> 내가, 내가 십년동안 울면서 후회하고 다짐했는데
-                        <br>꼭 그랬어야 되냐? 너네 그러면 안됐어
-                        <br>꼭 그렇게 다 가져가야만 속이 후련했냐!! ****들아
-                    </p>
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-5.jpg)"></div>
+                    <label style="color:red;">대사 길이 선택:
+                        <select name="male-description-select5" id="male-description-select5" style="width: 100px;" onchange='description_selected(5)'>
+                            <option value="short" selected>짧은 대사</option>
+                            <option value="entire">전체 대사</option>
+                        </select>
+                    </label>
+                    <div>
+                        <p id="male-body-description5" style="display:block;">
+                            대사:
+                            <br> 내가, 내가 십년동안 울면서 후회하고 다짐했는데
+                            <br>꼭 그랬어야 되냐? 너네 그러면 안됐어
+                        </p>
+                        <p id="male-body-description5-7" style="display:none;">
+                            대사:
+                            <br> 내가, 내가 십년동안 울면서 후회하고 다짐했는데
+                            <br>꼭 그랬어야 되냐? 너네 그러면 안됐어
+                            <br>꼭 그렇게 다 가져가야만 속이 후련했냐!! ****들아
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('5')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('5')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('5')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container5"></div>
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('5')">
-                            대사듣기
-                        </button>
-                    </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('5')">
-                            대사따라하기
-                        </button>
-                    </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('5')">
-                            결과지우기
-                        </button>
-                    </div>
+                <!-- end male -->
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    Coming soon...
                 </div>
-                <div class="voice-result" id="label-container5"></div>
-            </div>
-            <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-6.jpg)"></div>
-                <label style="color:red;">대사 길이 선택:
-                    <select name="description-select6" id="description-select6" style="width: 100px;" onchange='description_selected(6)'>
-                        <option value="short" selected>짧은 대사</option>
-                        <option value="middle">중간 대사</option>
-                        <option value="entire">전체 대사</option>
-                    </select>
-                </label>
-                <div>
-                    <p id="body-description6" style="display:block;">
-                        대사: 나는 경찰이다.
-                    </p>
-                    <p id="body-description6-7" style="display:none;">
-                        대사: 나는 경찰이다.
-                        <br> 대한민국 경찰은 모든 국민의 평안하고
-                        <br> 행복한 삶에 대한 x나게 영예로운 책임을 지고 있다.
-                    </p>
-                    <p id="body-description6-8" style="display:none;">
-                        대사: 나는 경찰이다.
-                        <br> 대한민국 경찰은 모든 국민의 평안하고
-                        <br> 행복한 삶에 대한 x나게 영예로운 책임을 지고 있다.
-                        <br> 지금도 전국 곳곳에 깔린 15만명의 경찰은
-                        <br> 두당 삼백여 시민들의 안전을 위해
-                        <br> 묵묵히 일하고 있다.
-                    </p>
-                </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('6')">
-                            대사듣기
-                        </button>
-                    </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('6')">
-                            대사따라하기
-                        </button>
-                    </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('6')">
-                            결과지우기
-                        </button>
-                    </div>
-                </div>
-                <div class="voice-result" id="label-container6"></div>
-            </div>
-            <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-7.jpg)"></div>
-                <div>
-                    <p id="body-description7">
-                        대사: 3・8선 밑으로는 골목까지 훤합니다.
-                        <br>핸들밥 30년 가까이 먹다보니깐 저절로 그리됐지요.
+                <!-- end female -->
 
-                    </p>
-                </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('7')">
-                            대사듣기
-                        </button>
-                    </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('7')">
-                            대사따라하기
-                        </button>
-                    </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('7')">
-                            결과지우기
-                        </button>
-                    </div>
-                </div>
-                <div class="voice-result" id="label-container7"></div>
             </div>
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-8.jpg)"></div>
-                <label style="color:red;">대사 길이 선택:
-                    <select name="description-select8" id="description-select8" style="width: 100px;" onchange='description_selected(8)'>
-                        <option value="short" selected>짧은 대사</option>
-                        <option value="middle">중간 대사</option>
-                        <option value="entire">전체 대사</option>
-                    </select>
-                </label>
-                <div>
-                    <p id="body-description8" style="display:block;">
-                        대사: 헌데, 관상관 양반! 생각해보니 영 이상하구만
-                    </p>
-                    <p id="body-description8-9" style="display:none;">
-                        대사: 헌데, 관상관 양반! 생각해보니 영 이상하구만
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이미 나는 왕이 되었는데 왕이 될 상이라니
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이거 순 엉터리 아닌가,
-                    </p>
-                    <p id="body-description8-10" style="display:none;">
-                        대사: 헌데, 관상관 양반! 생각해보니 영 이상하구만
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이미 나는 왕이 되었는데 왕이 될 상이라니
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이거 순 엉터리 아닌가,
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 왕이 되기 전에 했어야 용한 것이지
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이제와서 하는 소리야 누군들 못 하겠는가
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-6.jpg)"></div>
+                    <label style="color:red;">대사 길이 선택:
+                        <select name="male-description-select6" id="male-description-select6" style="width: 100px;" onchange='description_selected(6)'>
+                            <option value="short" selected>짧은 대사</option>
+                            <option value="middle">중간 대사</option>
+                            <option value="entire">전체 대사</option>
+                        </select>
+                    </label>
+                    <div>
+                        <p id="male-body-description6" style="display:block;">
+                            대사: 나는 경찰이다.
+                        </p>
+                        <p id="male-body-description6-7" style="display:none;">
+                            대사: 나는 경찰이다.
+                            <br> 대한민국 경찰은 모든 국민의 평안하고
+                            <br> 행복한 삶에 대한 x나게 영예로운 책임을 지고 있다.
+                        </p>
+                        <p id="male-body-description6-8" style="display:none;">
+                            대사: 나는 경찰이다.
+                            <br> 대한민국 경찰은 모든 국민의 평안하고
+                            <br> 행복한 삶에 대한 x나게 영예로운 책임을 지고 있다.
+                            <br> 지금도 전국 곳곳에 깔린 15만명의 경찰은
+                            <br> 두당 삼백여 시민들의 안전을 위해
+                            <br> 묵묵히 일하고 있다.
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('6')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('6')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('6')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container6"></div>
+                </div>
 
-                    </p>
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    Coming soon...
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('8')">
-                            대사듣기
-                        </button>
-                    </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('8')">
-                            대사따라하기
-                        </button>
-                    </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('8')">
-                            결과지우기
-                        </button>
-                    </div>
-                </div>
-                <div class="voice-result" id="label-container8"></div>
+                <!-- end female -->
             </div>
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-9.jpg)"></div>
-                <label style="color:red;">대사 길이 선택:
-                    <select name="description-select9" id="description-select9" style="width: 100px;" onchange='description_selected(9)'>
-                        <option value="short" selected>짧은 대사</option>
-                        <option value="middle">중간 대사</option>
-                        <option value="entire">전체 대사</option>
-                    </select>
-                </label>
-                <div>
-                    <p id="body-description9" style="display:block;">
-                        대사: 거, 갈비찜 잘하는데 혹시 좀 아세요?
-                        <br>너무 멀리 말고 이 근처에
-                    </p>
-                    <p id="body-description9-10" style="display:none;">
-                        대사: 거, 갈비찜 잘하는데 혹시 좀 아세요?
-                        <br>너무 멀리 말고 이 근처에
-                        <br>그죠, 아 오늘따라 왜 이렇게 갈비찜이 먹고 싶냐
-                        <br>원래 우리 그 아주머니가 갈비찜 진짜 잘하셨거든
-                    </p>
-                    <p id="body-description9-11" style="display:none;">
-                        대사: 거, 갈비찜 잘하는데 혹시 좀 아세요?
-                        <br>너무 멀리 말고 이 근처에
-                        <br>그죠, 아 오늘따라 왜 이렇게 갈비찜이 먹고 싶냐
-                        <br>원래 우리 그 아주머니가 갈비찜 진짜 잘하셨거든
-                        <br>예, 왜 갑자기 관둔건지 집사람은 설명도 안해주고
-                        <br>차암
-                    </p>
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-7.jpg)"></div>
+                    <div>
+                        <p id="male-body-description7">
+                            대사: 3・8선 밑으로는 골목까지 훤합니다.
+                            <br>핸들밥 30년 가까이 먹다보니깐 저절로 그리됐지요.
+
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('7')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('7')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('7')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container7"></div>
+                    </div>
+
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    Coming soon...
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('9')">
-                            대사듣기
-                        </button>
-                    </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('9')">
-                            대사따라하기
-                        </button>
-                    </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('9')">
-                            결과지우기
-                        </button>
-                    </div>
+                <!-- end female -->                    
                 </div>
-                <div class="voice-result" id="label-container9"></div>
+                <div class="swiper-slide">
+                <!-- start male -->
+                <div class="male">                    
+                    <div class="acter-image" style="background-image:url(images/male/step-8.jpg)"></div>
+                    <label style="color:red;">대사 길이 선택:
+                        <select name="male-description-select8" id="male-description-select8" style="width: 100px;" onchange='description_selected(8)'>
+                            <option value="short" selected>짧은 대사</option>
+                            <option value="middle">중간 대사</option>
+                            <option value="entire">전체 대사</option>
+                        </select>
+                    </label>
+                    <div>
+                        <p id="male-body-description8" style="display:block;">
+                            대사: 헌데, 관상관 양반! 생각해보니 영 이상하구만
+                        </p>
+                        <p id="male-body-description8-9" style="display:none;">
+                            대사: 헌데, 관상관 양반! 생각해보니 영 이상하구만
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이미 나는 왕이 되었는데 왕이 될 상이라니
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이거 순 엉터리 아닌가,
+                        </p>
+                        <p id="male-body-description8-10" style="display:none;">
+                            대사: 헌데, 관상관 양반! 생각해보니 영 이상하구만
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이미 나는 왕이 되었는데 왕이 될 상이라니
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이거 순 엉터리 아닌가,
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 왕이 되기 전에 했어야 용한 것이지
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이제와서 하는 소리야 누군들 못 하겠는가
+
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('8')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('8')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('8')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container8"></div>       
+                </div>
+                <!-- end male -->
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    Coming soon...
+                </div>
+                <!-- end female -->
             </div>
             <div class="swiper-slide">
-                <div class="acter-image" style="background-image:url(images/step-10.jpg)"></div>
-                <label style="color:red;">대사 길이 선택:
-                    <select name="description-select10" id="description-select10" style="width: 100px;" onchange='description_selected(10)'>
-                        <option value="short" selected>짧은 대사</option>
-                        <option value="middle">중간 대사</option>
-                        <option value="entire">전체 대사</option>
-                    </select>
-                </label>
-                <div>
-                    <p id="body-description10" style="display:block;">
-                        대사: 일단 하나씩 깔끔하게 부러뜨리고 가지
-                    </p>
-                    <p id="body-description10-11" style="display:none;">
-                        대사: 일단 하나씩 깔끔하게 부러뜨리고 가지
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전면에 나서겠다고 하니깐 끝내 반대하던가?
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이학승 회장말이야
-                    </p>
-                    <p id="body-description10-12" style="display:none;">
-                        대사: 일단 하나씩 깔끔하게 부러뜨리고 가지
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전면에 나서겠다고 하니깐 끝내 반대하던가?
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이학승 회장말이야
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 과잉보호일리는 없고, 자네 표현대로 뭐,
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 믿음의 문제 그런거야?
-                    </p>
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-9.jpg)"></div>
+                    <label style="color:red;">대사 길이 선택:
+                        <select name="male-description-select9" id="male-description-select9" style="width: 100px;" onchange='description_selected(9)'>
+                            <option value="short" selected>짧은 대사</option>
+                            <option value="middle">중간 대사</option>
+                            <option value="entire">전체 대사</option>
+                        </select>
+                    </label>
+                    <div>
+                        <p id="male-body-description9" style="display:block;">
+                            대사: 거, 갈비찜 잘하는데 혹시 좀 아세요?
+                            <br>너무 멀리 말고 이 근처에
+                        </p>
+                        <p id="male-body-description9-10" style="display:none;">
+                            대사: 거, 갈비찜 잘하는데 혹시 좀 아세요?
+                            <br>너무 멀리 말고 이 근처에
+                            <br>그죠, 아 오늘따라 왜 이렇게 갈비찜이 먹고 싶냐
+                            <br>원래 우리 그 아주머니가 갈비찜 진짜 잘하셨거든
+                        </p>
+                        <p id="male-body-description9-11" style="display:none;">
+                            대사: 거, 갈비찜 잘하는데 혹시 좀 아세요?
+                            <br>너무 멀리 말고 이 근처에
+                            <br>그죠, 아 오늘따라 왜 이렇게 갈비찜이 먹고 싶냐
+                            <br>원래 우리 그 아주머니가 갈비찜 진짜 잘하셨거든
+                            <br>예, 왜 갑자기 관둔건지 집사람은 설명도 안해주고
+                            <br>차암
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('9')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('9')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('9')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container9"></div>
                 </div>
-                <div class="btn-group">
-                    <div class="btn-listening">
-                        <button class="btn btn-primary" onclick="play('10')">
-                            대사듣기
-                        </button>
-                    </div>
-                    <!-- Button trigger modal -->
-                    <div class="btn-speaking">
-                        <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('10')">
-                            대사따라하기
-                        </button>
-                    </div>
-                    <div class="btn-delete">
-                        <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('10')">
-                            결과지우기
-                        </button>
-                    </div>
+                <!-- end male -->
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    Coming soon...
                 </div>
-                <div class="voice-result" id="label-container10"></div>
+                <!-- end female -->
             </div>
-            <!--<div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>                 <div class="swiper-slide" style="background-image:url(images/nature-5.jpg)"></div>              -->
+            <div class="swiper-slide">
+                <!-- start male -->
+                <div class="male">
+                    <div class="acter-image" style="background-image:url(images/male/step-10.jpg)"></div>
+                    <label style="color:red;">대사 길이 선택:
+                        <select name="male-description-select10" id="male-description-select10" style="width: 100px;" onchange='description_selected(10)'>
+                            <option value="short" selected>짧은 대사</option>
+                            <option value="middle">중간 대사</option>
+                            <option value="entire">전체 대사</option>
+                        </select>
+                    </label>
+                    <div>
+                        <p id="male-body-description10" style="display:block;">
+                            대사: 일단 하나씩 깔끔하게 부러뜨리고 가지
+                        </p>
+                        <p id="male-body-description10-11" style="display:none;">
+                            대사: 일단 하나씩 깔끔하게 부러뜨리고 가지
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전면에 나서겠다고 하니깐 끝내 반대하던가?
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이학승 회장말이야
+                        </p>
+                        <p id="male-body-description10-12" style="display:none;">
+                            대사: 일단 하나씩 깔끔하게 부러뜨리고 가지
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전면에 나서겠다고 하니깐 끝내 반대하던가?
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이학승 회장말이야
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 과잉보호일리는 없고, 자네 표현대로 뭐,
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 믿음의 문제 그런거야?
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btn-listening">
+                            <button class="btn btn-primary" onclick="play('10')">
+                                대사듣기
+                            </button>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <div class="btn-speaking">
+                            <button type="button" style="text-align: center" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="description('10')">
+                                대사따라하기
+                            </button>
+                        </div>
+                        <div class="btn-delete">
+                            <button class="btn btn-primary" style="text-align: right" onclick="deleteResult('10')">
+                                결과지우기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="voice-result" id="male-label-container10"></div>
+                </div>
+                <!-- end male -->
+                <!-- start female -->
+                <div class="female" style="display:none;">
+                    Coming soon...
+                </div>
+                <!-- end female -->
+            </div>
+
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -479,6 +654,7 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             </div>
         </div>
     </div>
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -494,6 +670,7 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
                 <div class="recording-time" style="color:red;" id="recording-time"></div>
                 <label style="color:red;">*녹음 시간 선택하기:
                     <select name="recording-time-select" id="recording-time-select" style="width: 70px;">
+                        <option value="7">7초</option>
                         <option value="10">10초</option>
                         <option value="15">15초</option>
                         <option value="20">20초</option>
@@ -581,6 +758,31 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             },
         },
     });
+    //togglebutton
+    var gender = "male";
+
+    function togglestate() {
+        var toggleOn = document.getElementById("switchbtn").checked;
+        var maleTag = document.getElementsByClassName("male");
+        var femaleTag = document.getElementsByClassName("female");
+        if (toggleOn) {
+            gender = "male";
+            for (var i = 0; i < maleTag.length; i++) {
+                maleTag[i].style.display = "block";
+            }
+            for (var j = 0; j < femaleTag.length; j++) {
+                femaleTag[j].style.display = "none";
+            }
+        } else {
+            gender = "female";
+            for (var i = 0; i < maleTag.length; i++) {
+                maleTag[i].style.display = "none";
+            }
+            for (var j = 0; j < femaleTag.length; j++) {
+                femaleTag[j].style.display = "block";
+            }
+        }
+    }
     //select description
     var descriptionNum = null;
     var audioNum = null;
@@ -588,13 +790,23 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
 
     function description_selected(num) {
         selectBoxOn = true;
-        var selectDescription = document.getElementById('description-select' + num);
-        var shortDescription = document.getElementById('body-description' + num);
-        var middleDescription = null;
-        if (document.getElementById('body-description' + num + "-" + (parseInt(num) + 1))) {
-            middleDescription = document.getElementById('body-description' + num + "-" + (parseInt(num) + 1));
+        if (gender === "male") {
+            var selectDescription = document.getElementById('male-description-select' + num);
+            var shortDescription = document.getElementById('male-body-description' + num);
+            var middleDescription = null;
+            if (document.getElementById('male-body-description' + num + "-" + (parseInt(num) + 1))) {
+                middleDescription = document.getElementById('male-body-description' + num + "-" + (parseInt(num) + 1));
+            }
+            var entireDescription = document.getElementById('male-body-description' + num + "-" + (parseInt(num) + 2));
+        } else {
+            var selectDescription = document.getElementById('female-description-select' + num);
+            var shortDescription = document.getElementById('female-body-description' + num);
+            var middleDescription = null;
+            if (document.getElementById('female-body-description' + num + "-" + (parseInt(num) + 1))) {
+                middleDescription = document.getElementById('female-body-description' + num + "-" + (parseInt(num) + 1));
+            }
+            var entireDescription = document.getElementById('female-body-description' + num + "-" + (parseInt(num) + 2));
         }
-        var entireDescription = document.getElementById('body-description' + num + "-" + (parseInt(num) + 2));
         selectedValue = selectDescription.options[selectDescription.selectedIndex].value;
         if (selectedValue === 'short') {
             shortDescription.style.display = "block";
@@ -626,7 +838,7 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             num = audioNum;
             audioNum = null;
         }
-        var path = 'audio/step' + num + '.mp3';
+        var path = 'audio/' + gender + '/step' + num + '.mp3';
         var audio = new Audio(path);
         audio.play();
     }
@@ -677,7 +889,11 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             recording.style.display = "block";
             startCount();
             classLabels = recognizer.wordLabels(); // get class labels
-            labelContainer = document.getElementById("label-container" + labelContainerNum);
+            if (gender === "male") {
+                labelContainer = document.getElementById("male-label-container" + labelContainerNum);
+            } else {
+                labelContainer = document.getElementById("female-label-container" + labelContainerNum);
+            }
             for (let i = 0; i < classLabels.length; i++) {
                 var resultDiv = document.createElement("div");
                 resultDiv.setAttribute("id", "result-graph" + i + labelContainerNum);
@@ -767,42 +983,58 @@ EN" "http://www.wapfolum.org/DTD/xhtml-mobile10.dtd">
             num = descriptionNum;
         }
         movingSlideOn = false;
-        var description = document.getElementById("body-description" + num).innerHTML;
+        if (gender === "male") {
+            var description = document.getElementById("male-body-description" + num).innerHTML;
+            //AI URL setting
+            switch (num) {
+                case '1':
+                    URL = "https://teachablemachine.withgoogle.com/models/vYJDU7_-w/";
+                    break;
+                case '2':
+                    URL = "https://teachablemachine.withgoogle.com/models/A9NWVDHOC/";
+                    break;
+                case '3':
+                    URL = "https://teachablemachine.withgoogle.com/models/nhakPlkjg/";
+                    break;
+                case '4':
+                    URL = "https://teachablemachine.withgoogle.com/models/qoIlWVnoq/";
+                    break;
+                case '5':
+                    URL = "https://teachablemachine.withgoogle.com/models/2-9YUxkP_/";
+                    break;
+                case '6':
+                    URL = "https://teachablemachine.withgoogle.com/models/DFqZ7M5nW/";
+                    break;
+                case '7':
+                    URL = "https://teachablemachine.withgoogle.com/models/5tfdAmuRf/";
+                    break;
+                case '8':
+                    URL = "https://teachablemachine.withgoogle.com/models/cKoxl02md/";
+                    break;
+                case '9':
+                    URL = "https://teachablemachine.withgoogle.com/models/wqX-_eZR8/";
+                    break;
+                case '10':
+                    URL = "https://teachablemachine.withgoogle.com/models/8IZcQh8uj/";
+                    break;
+            }
+        } else {
+            var description = document.getElementById("female-body-description" + num).innerHTML;
+            //AI URL setting
+            switch (num) {
+                case '1':
+                    URL = "https://teachablemachine.withgoogle.com/models/fkEfVRaJ8/";
+                    break;
+                case '2':
+                    URL = "https://teachablemachine.withgoogle.com/models/GC9UWMXwh/";
+                    break;
+                case '3':
+                    URL = "https://teachablemachine.withgoogle.com/models/S_T_TAaiF/";
+                    break;                    
+            }
+        }
         document.getElementById("modalBody").innerHTML = description;
         labelContainerNum = num;
-        //AI URL setting
-        switch (num) {
-            case '1':
-                URL = "https://teachablemachine.withgoogle.com/models/vYJDU7_-w/";
-                break;
-            case '2':
-                URL = "https://teachablemachine.withgoogle.com/models/A9NWVDHOC/";
-                break;
-            case '3':
-                URL = "https://teachablemachine.withgoogle.com/models/nhakPlkjg/";
-                break;
-            case '4':
-                URL = "https://teachablemachine.withgoogle.com/models/qoIlWVnoq/";
-                break;
-            case '5':
-                URL = "https://teachablemachine.withgoogle.com/models/2-9YUxkP_/";
-                break;
-            case '6':
-                URL = "https://teachablemachine.withgoogle.com/models/DFqZ7M5nW/";
-                break;
-            case '7':
-                URL = "https://teachablemachine.withgoogle.com/models/5tfdAmuRf/";
-                break;
-            case '8':
-                URL = "https://teachablemachine.withgoogle.com/models/cKoxl02md/";
-                break;
-            case '9':
-                URL = "https://teachablemachine.withgoogle.com/models/wqX-_eZR8/";
-                break;
-            case '10':
-                URL = "https://teachablemachine.withgoogle.com/models/8IZcQh8uj/";
-                break;
-        }
     }
 </script>
 
